@@ -26,6 +26,7 @@ class _BorderedTextFieldState extends State<BorderedTextField> {
   @override
   Widget build(BuildContext context) {
     return TextField(
+      cursorColor: Theme.of(context).primaryColor,
       obscureText: widget.hint == 'Password' || widget.hint == 'Confirm password' ? true : false,
       controller: widget.controller,
       style: GoogleFonts.lato(               

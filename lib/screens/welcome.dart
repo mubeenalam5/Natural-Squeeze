@@ -66,57 +66,57 @@ class _WelcomeScrState extends State<WelcomeScr> {
               ),
             ),
             SizedBox(height: ScreenUtil().setHeight(45),),
-            Stack(
-              alignment: Alignment.topCenter,
-              children: [
-                Container(
-                  height: MediaQuery.of(context).size.height*0.492,
-                ),
-                Positioned(
-                  bottom: 0,
-                                  child: Arc(
-                    edge: Edge.TOP,
-                    arcType: ArcType.CONVEX,
-                    height: 35.0,
-                    child: Container(
-                      height: ScreenUtil().screenHeight * 0.385,
-                      width: ScreenUtil().screenWidth,
-                      decoration: BoxDecoration(
-                          color: Color(0xFFDDFFEE).withOpacity(0.8),
-                          image: DecorationImage(
-                              fit: BoxFit.fill,
-                              image: AssetImage(
-                                'assets/confetti@3x.png',
-                              ))),
-                      padding: EdgeInsets.only(top: 60.0),
-                      
+            Expanded(
+                          child: Stack(
+                alignment: Alignment.topCenter,
+                children: [
+                  SizedBox.expand(),
+                  Positioned(
+                    bottom: 0,
+                                    child: Arc(
+                      edge: Edge.TOP,
+                      arcType: ArcType.CONVEX,
+                      height: 35.0,
+                      child: Container(
+                        height: ScreenUtil().screenHeight * 0.385,
+                        width: ScreenUtil().screenWidth,
+                        decoration: BoxDecoration(
+                            color: Color(0xFFDDFFEE).withOpacity(0.8),
+                            image: DecorationImage(
+                                fit: BoxFit.fill,
+                                image: AssetImage(
+                                  'assets/confetti@3x.png',
+                                ))),
+                        padding: EdgeInsets.only(top: 60.0),
+                        
+                      ),
                     ),
                   ),
-                ),
-            //     SizedBox(
-            //   height: ScreenUtil().setHeight(50.0),
-            // ),
-            Container(
-                height: ScreenUtil().setHeight(260.23),
-                width: ScreenUtil().setWidth(309.93),
-                child: Image.asset('assets/illustration@3x.png',
-                    fit: BoxFit.fill)),
-            // SizedBox(
-            //   height: ScreenUtil().setHeight(50.8),
-            // ),
-            Positioned(
-              bottom: 50,
-                          child: TempTextButton(
-                  height: 65.0,
-                  width: 239.0,
-                  onPressed: () => Navigator.push(
-                        context,
-                        MaterialPageRoute(builder: (context) => LoginScr()),
-                      ),
-                  textSize: 16.0,
-                  text: 'Get Started'),
-            )
-              ],
+              //     SizedBox(
+              //   height: ScreenUtil().setHeight(50.0),
+              // ),
+              Container(
+                  height: ScreenUtil().setHeight(260.23),
+                  width: ScreenUtil().setWidth(309.93),
+                  child: Image.asset('assets/illustration@3x.png',
+                      fit: BoxFit.fill)),
+              // SizedBox(
+              //   height: ScreenUtil().setHeight(50.8),
+              // ),
+              Positioned(
+                bottom: 50,
+                            child: TempTextButton(
+                    height: 65.0,
+                    width: 239.0,
+                    onPressed: () => Navigator.push(
+                          context,
+                          MaterialPageRoute(builder: (context) => LoginScr()),
+                        ),
+                    textSize: 16.0,
+                    text: 'Get Started'),
+              )
+                ],
+              ),
             ),
             
           ],

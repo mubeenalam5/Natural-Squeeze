@@ -2,6 +2,9 @@ import 'package:clippy_flutter/arc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:natrualsqueeze/screens/categories.dart';
+import 'package:natrualsqueeze/widgets/allproductcard.dart';
+import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
 
 import '../widgets/textbutton.dart';
 import '../widgets/productcard.dart';
@@ -136,18 +139,16 @@ class _HomeScrState extends State<HomeScr> {
                     width: ScreenUtil().setWidth(147.0),
                     text: 'Learn More',
                     textSize: 13.0,
-                    onPressed: () {},
+                    onPressed: () => pushNewScreen(context, screen: CategoriesScr()),
                   ),
                 ],
               ),
             ),
             SizedBox(height: ScreenUtil().setHeight(36.0),),
-            Container(
-              padding: EdgeInsets.only(left: ScreenUtil().setWidth(57.0)),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
+           
+                Padding(
+                  padding: EdgeInsets.only(left:ScreenUtil().setWidth(57)),
+                                  child: Text(
                       'Hot Items',
                       textAlign: TextAlign.left,
                       style: GoogleFonts.lato(
@@ -156,23 +157,49 @@ class _HomeScrState extends State<HomeScr> {
                           fontSize: 18,
                           color: Color(0xFF222222)),
                   ),
-                  SizedBox(height: ScreenUtil().setHeight(19.0),),
-                  Container(
-                    height: ScreenUtil().setHeight(200.0),
-                    child: ListView.separated(
-                      scrollDirection: Axis.horizontal,
-                      itemCount: products.length,
-                      separatorBuilder: (BuildContext context, int index) =>
-                        SizedBox(width: ScreenUtil().setWidth(10.0),),
-                      itemBuilder: (BuildContext context, int index) =>
-                          ProductCard(
-                            product: products[index],
-                          ),
-                    ),
+                ),
+                SizedBox(height: ScreenUtil().setHeight(19.0),),
+                Container(
+                  height: ScreenUtil().setHeight(200.0),
+                  child: ListView.separated(
+                    padding: EdgeInsets.symmetric(horizontal:ScreenUtil().setWidth(57)),
+                    scrollDirection: Axis.horizontal,
+                    itemCount: products.length,
+                    separatorBuilder: (BuildContext context, int index) =>
+                      SizedBox(width: ScreenUtil().setWidth(10.0),),
+                    itemBuilder: (BuildContext context, int index) =>
+                        ProductCard(
+                          product: products[index],cardWidth: 133.0
+                        ),
                   ),
-                ],
-              ),
-            )
+                ),
+                SizedBox(height: ScreenUtil().setHeight(35.0),),
+                Padding(
+                  padding: EdgeInsets.only(left:ScreenUtil().setWidth(57)),
+                                  child: Text(
+                      'All Our Products',
+                      textAlign: TextAlign.left,
+                      style: GoogleFonts.lato(
+                          letterSpacing: -0.45,
+                          fontWeight: FontWeight.w600,
+                          fontSize: 18,
+                          color: Color(0xFF222222)),
+                  ),
+                ),
+                SizedBox(height: ScreenUtil().setHeight(20.0),),
+                ListView.separated(
+                  scrollDirection: Axis.vertical,
+                  shrinkWrap: true,
+                  padding: EdgeInsets.symmetric(horizontal:ScreenUtil().setWidth(47)),
+                  physics: ClampingScrollPhysics(),
+                  itemCount: products.length,
+                  separatorBuilder: (BuildContext context, int index) =>
+                    SizedBox(height: ScreenUtil().setHeight(10.0),),
+                  itemBuilder: (BuildContext context, int index) =>
+                      AllProductCard(
+                        product: allproducts[index],
+                      ),
+                ),
           ],
         ),
       ),
@@ -184,5 +211,12 @@ class _HomeScrState extends State<HomeScr> {
     Product(image: 'assets/🥯@3x.png',title: 'Bagel', description: 'Cream cheese bagel',price: 9.39),
     Product(image: 'assets/🍵@3x.png',title: 'Green Tea', description: 'Chinese green tea',price: 2.99),
     Product(image: 'assets/🍹@3x.png',title: 'Berry Juice', description: 'Mix of berries juice',price: 7.39),
+  ];
+  List<Product> allproducts = [
+    Product(image: 'assets/🧃@3x.png',title: 'Juices', description: 'Authentic cold brew',price: 2.49),
+    Product(image: 'assets/🥤@3x.png',title: 'Smoothies', description: 'Authentic cold brew',price: 2.49),
+    Product(image: 'assets/☕@3x.png',title: 'Lattes', description: 'Cream cheese bagel',price: 9.39),
+    Product(image: 'assets/🥪@3x.png',title: 'Sandwiches', description: 'Chinese green tea',price: 2.99),
+    Product(image: 'assets/🥗@3x.png',title: 'Salads', description: 'Mix of berries juice',price: 7.39),
   ];
 }

@@ -80,12 +80,10 @@ class _MainScrState extends State<MainScr> {
       context,
       controller: _controller,
       items: _navBarsItems(),
-      navBarHeight: ScreenUtil().setHeight(80.0),
       screens: _buildScreens(),
       onItemSelected: (i){
         setState(() {});
       },
-      confineInSafeArea: true,
       backgroundColor: Colors.white,
       handleAndroidBackButtonPress: true,
       resizeToAvoidBottomInset: true,
