@@ -2,7 +2,7 @@ import 'package:clippy_flutter/arc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:natrualsqueeze/screens/categories.dart';
+import 'package:natrualsqueeze/screens/about.dart';
 import 'package:natrualsqueeze/screens/productdetail.dart';
 import 'package:natrualsqueeze/widgets/allproductcard.dart';
 import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
@@ -11,6 +11,8 @@ import '../widgets/cartwidget.dart';
 import '../widgets/textbutton.dart';
 import '../widgets/productcard.dart';
 import '../models/product.dart';
+import 'about.dart';
+import 'categories.dart';
 
 class HomeScr extends StatefulWidget {
   @override
@@ -111,7 +113,7 @@ class _HomeScrState extends State<HomeScr> {
                     text: 'Learn More',
                     textSize: 13.0,
                     onPressed: () =>
-                        pushNewScreen(context, screen: CategoriesScr()),
+                        pushNewScreen(context, screen: AboutScr()),
                   ),
                 ],
               ),

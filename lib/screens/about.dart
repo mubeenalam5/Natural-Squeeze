@@ -3,13 +3,13 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class CategoriesScr extends StatefulWidget {
+class AboutScr extends StatefulWidget {
 
   @override
-  _CategoriesScrState createState() => _CategoriesScrState();
+  _AboutScrState createState() => _AboutScrState();
 }
 
-class _CategoriesScrState extends State<CategoriesScr> {
+class _AboutScrState extends State<AboutScr> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -130,6 +130,12 @@ class _CategoriesScrState extends State<CategoriesScr> {
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: ScreenUtil().setWidth(47)),
                 child: Container(
+                  padding: EdgeInsets.only(
+                    top:ScreenUtil().setHeight(85.0),
+                    right: ScreenUtil().setWidth(117.0),
+                    left: ScreenUtil().setWidth(175.0),
+                    bottom: ScreenUtil().setHeight(111.0)
+                  ),
                   height: ScreenUtil().setHeight(222.0),
                   width: double.infinity,
                   decoration: BoxDecoration(
@@ -139,6 +145,7 @@ class _CategoriesScrState extends State<CategoriesScr> {
                       image: AssetImage('assets/map@3x.png')
                     )
                   ),
+                  child: Image.asset('assets/Icon feather-map-pin@3x.png'),
                 ),
               )
             ],
