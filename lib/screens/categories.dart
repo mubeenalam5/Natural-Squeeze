@@ -152,9 +152,10 @@ class _CategoriesScrState extends State<CategoriesScr> {
               SizedBox(
                 height: ScreenUtil().setHeight(12.0),
               ),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 42.0),
+              Container(
+                width: MediaQuery.of(context).size.width,
                 child: Wrap(
+                  alignment: WrapAlignment.center,
                     spacing: ScreenUtil().setWidth(3.1),
                     children: List.generate(
                         popular.length,
@@ -195,9 +196,10 @@ class _CategoriesScrState extends State<CategoriesScr> {
               SizedBox(
                 height: ScreenUtil().setHeight(12.0),
               ),
-              Padding(
-                padding: EdgeInsets.symmetric(horizontal: 42.0),
+              Container(
+                width: MediaQuery.of(context).size.width,
                 child: Wrap(
+                  alignment: WrapAlignment.center,
                     spacing: ScreenUtil().setWidth(3.1),
                     children: List.generate(
                         bagels.length,
