@@ -9,13 +9,12 @@ class TempTextButton extends StatefulWidget {
   final double height;
   final double width;
 
-  TempTextButton({
-    @required this.text,
-    @required this.textSize,
-    @required this.onPressed, 
-    @required this.height, 
-    @required this.width
-  });
+  TempTextButton(
+      {@required this.text,
+      @required this.textSize,
+      @required this.onPressed,
+      @required this.height,
+      @required this.width});
   @override
   _TempTextButtonState createState() => _TempTextButtonState();
 }
@@ -37,7 +36,9 @@ class _TempTextButtonState extends State<TempTextButton> {
           child: Text(
             widget.text,
             textAlign: TextAlign.center,
-            style: GoogleFonts.lato(fontWeight: FontWeight.bold, fontSize: ScreenUtil().setSp(widget.textSize)),
+            style: GoogleFonts.lato(
+                fontWeight: FontWeight.bold,
+                fontSize: ScreenUtil().setSp(widget.textSize)),
           )),
     );
   }

@@ -56,7 +56,7 @@ class _AboutScrState extends State<AboutScr> {
                           style: GoogleFonts.lato(
                               letterSpacing: -0.45,
                               fontWeight: FontWeight.w600,
-                              fontSize: 21,
+                              fontSize: ScreenUtil().setSp(21),
                               color: Color(0xFF222222)),
                         )
                       ],
@@ -73,7 +73,7 @@ class _AboutScrState extends State<AboutScr> {
                   style: GoogleFonts.lato(
                       letterSpacing: -0.45,
                       fontWeight: FontWeight.w500,
-                      fontSize: 18,
+                      fontSize: ScreenUtil().setSp(18),
                       color: Color(0xFF222222)),
                 ),
               ),
@@ -88,7 +88,7 @@ class _AboutScrState extends State<AboutScr> {
                   style: GoogleFonts.lato(
                       letterSpacing: -0.45,
                       height: 1.4,
-                      fontSize: 16,
+                      fontSize: ScreenUtil().setSp(16),
                       fontWeight: FontWeight.w400,
                       color: Color(0xFFA5A5A5)),
                 ),
@@ -104,7 +104,7 @@ class _AboutScrState extends State<AboutScr> {
                   style: GoogleFonts.lato(
                       letterSpacing: -0.45,
                       fontWeight: FontWeight.w500,
-                      fontSize: 18,
+                      fontSize: ScreenUtil().setSp(18),
                       color: Color(0xFF222222)),
                 ),
               ),
@@ -119,7 +119,7 @@ class _AboutScrState extends State<AboutScr> {
                   style: GoogleFonts.lato(
                       letterSpacing: -0.45,
                       height: 1.4,
-                      fontSize: 14,
+                      fontSize: ScreenUtil().setSp(14),
                       fontWeight: FontWeight.w400,
                       color: Color(0xFFA5A5A5)),
                 ),

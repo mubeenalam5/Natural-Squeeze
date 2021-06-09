@@ -19,7 +19,7 @@ class _ProductCardState extends State<ProductCard> {
     return Container(
       height: ScreenUtil().setHeight(195.0),
       width: ScreenUtil().setWidth(widget.cardWidth),
-      margin: EdgeInsets.symmetric(horizontal: 8.0, vertical: 8.0),
+      margin: EdgeInsets.symmetric(horizontal: ScreenUtil().setWidth(8.0), vertical: ScreenUtil().setHeight(8.0)),
       decoration: BoxDecoration(
           color: Colors.white,
           shape: BoxShape.rectangle,

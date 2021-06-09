@@ -95,7 +95,7 @@ class _CartScrState extends State<CartScr> {
                 height: 70.0,
                 width: 239.0,
                 text: 'Checkout',
-                textSize: 16.0,
+                textSize: ScreenUtil().setSp(16),
                 onPressed: () => pushNewScreen(context, screen: CheckoutScr(),withNavBar: true),
               ),
             ),

@@ -24,7 +24,7 @@ class _CategoriesScrState extends State<CategoriesScr> {
               Arc(
                   edge: Edge.BOTTOM,
                   arcType: ArcType.CONVEX,
-                  height: 35.0,
+                  height: ScreenUtil().setHeight(35.0),
                   child: Container(
                     height: ScreenUtil().screenHeight * 0.25,
                     width: ScreenUtil().screenWidth,
@@ -69,7 +69,7 @@ class _CategoriesScrState extends State<CategoriesScr> {
                                 style: GoogleFonts.lato(
                                     letterSpacing: -0.45,
                                     fontWeight: FontWeight.w600,
-                                    fontSize: 21,
+                                    fontSize: ScreenUtil().setSp(21),
                                     color: Color(0xFF222222)),
                               )),
                         )
@@ -87,7 +87,7 @@ class _CategoriesScrState extends State<CategoriesScr> {
                   style: GoogleFonts.lato(
                       letterSpacing: -0.45,
                       fontWeight: FontWeight.w500,
-                      fontSize: 18,
+                      fontSize: ScreenUtil().setSp(18),
                       color: Color(0xFF222222)),
                 ),
               ),
@@ -134,7 +134,7 @@ class _CategoriesScrState extends State<CategoriesScr> {
                       style: GoogleFonts.lato(
                           letterSpacing: -0.45,
                           fontWeight: FontWeight.w500,
-                          fontSize: 18,
+                          fontSize: ScreenUtil().setSp(18),
                           color: Color(0xFF222222)),
                     ),
                     Text(
@@ -143,7 +143,7 @@ class _CategoriesScrState extends State<CategoriesScr> {
                       style: GoogleFonts.lato(
                           letterSpacing: -0.45,
                           fontWeight: FontWeight.w500,
-                          fontSize: 14,
+                          fontSize: ScreenUtil().setSp(14),
                           color: Theme.of(context).primaryColor),
                     ),
                   ],
@@ -178,7 +178,7 @@ class _CategoriesScrState extends State<CategoriesScr> {
                       style: GoogleFonts.lato(
                           letterSpacing: -0.45,
                           fontWeight: FontWeight.w500,
-                          fontSize: 18,
+                          fontSize: ScreenUtil().setSp(18),
                           color: Color(0xFF222222)),
                     ),
                     Text(
@@ -187,7 +187,7 @@ class _CategoriesScrState extends State<CategoriesScr> {
                       style: GoogleFonts.lato(
                           letterSpacing: -0.45,
                           fontWeight: FontWeight.w500,
-                          fontSize: 14,
+                          fontSize: ScreenUtil().setSp(14),
                           color: Theme.of(context).primaryColor),
                     ),
                   ],

@@ -20,7 +20,7 @@ class _AllProductCardState extends State<AllProductCard> {
     return Container(
       height: ScreenUtil().setHeight(87.0),
       width: double.infinity,
-      margin: EdgeInsets.symmetric(horizontal: 8.0, vertical: 8.0),
+      margin: EdgeInsets.symmetric(horizontal: ScreenUtil().setWidth(8.0), vertical: ScreenUtil().setHeight(8.0)),
       decoration: BoxDecoration(
           color: Colors.white,
           shape: BoxShape.rectangle,

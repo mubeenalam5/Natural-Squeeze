@@ -26,7 +26,7 @@ class _SignupScrState extends State<SignupScr> {
               Arc(
                 edge: Edge.BOTTOM,
                 arcType: ArcType.CONVEX,
-                height: 35.0,
+                height: ScreenUtil().setHeight(35.0),
                 child: Container(
                   height: ScreenUtil().screenHeight * 0.325,
                   width: ScreenUtil().screenWidth,
@@ -151,7 +151,7 @@ class _SignupScrState extends State<SignupScr> {
                           Text(
                             'Or Sign up with',
                             style: GoogleFonts.lato(
-                                fontSize: 12.0, color: Color(0xFFA5A5A5)),
+                                fontSize: ScreenUtil().setSp(12.0), color: Color(0xFFA5A5A5)),
                           ),
                           Container(
                               width: ScreenUtil().setWidth(114.0),

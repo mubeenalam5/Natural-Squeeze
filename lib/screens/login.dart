@@ -25,7 +25,7 @@ class _LoginScrState extends State<LoginScr> {
               Arc(
                 edge: Edge.BOTTOM,
                 arcType: ArcType.CONVEX,
-                height: 35.0,
+                height: ScreenUtil().setHeight(35.0),
                 child: Container(
                   height: ScreenUtil().screenHeight * 0.345,
                   width: ScreenUtil().screenWidth,
@@ -190,7 +190,7 @@ class _LoginScrState extends State<LoginScr> {
                             text: TextSpan(
                                 text: 'Dont have an account?  ',
                                 style: GoogleFonts.lato(
-                                    fontSize: 14.0, color: Color(0xFFA5A5A5)),
+                                    fontSize: ScreenUtil().setSp(14), color: Color(0xFFA5A5A5)),
                                 children: <TextSpan>[
                                   TextSpan(
                                       text: 'Sign up',

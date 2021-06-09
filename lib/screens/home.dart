@@ -30,7 +30,7 @@ class _HomeScrState extends State<HomeScr> {
             Arc(
               edge: Edge.BOTTOM,
               arcType: ArcType.CONVEX,
-              height: 35.0,
+              height: ScreenUtil().setHeight(35.0),
               child: Container(
                 height: ScreenUtil().screenHeight * 0.31,
                 width: ScreenUtil().screenWidth,
@@ -66,7 +66,7 @@ class _HomeScrState extends State<HomeScr> {
                             style: GoogleFonts.lato(
                                 letterSpacing: -0.45,
                                 fontWeight: FontWeight.w600,
-                                fontSize: 22,
+                                fontSize: ScreenUtil().setSp(22),
                                 color: Color(0xFF222222)),
                           )),
                     )
@@ -89,7 +89,7 @@ class _HomeScrState extends State<HomeScr> {
                     style: GoogleFonts.lato(
                         letterSpacing: -0.45,
                         fontWeight: FontWeight.w600,
-                        fontSize: 18,
+                        fontSize: ScreenUtil().setSp(18),
                         color: Color(0xFF222222)),
                   ),
                   SizedBox(
@@ -128,7 +128,7 @@ class _HomeScrState extends State<HomeScr> {
                 style: GoogleFonts.lato(
                     letterSpacing: -0.45,
                     fontWeight: FontWeight.w600,
-                    fontSize: 18,
+                    fontSize: ScreenUtil().setSp(18),
                     color: Color(0xFF222222)),
               ),
             ),
@@ -164,7 +164,7 @@ class _HomeScrState extends State<HomeScr> {
                 style: GoogleFonts.lato(
                     letterSpacing: -0.45,
                     fontWeight: FontWeight.w600,
-                    fontSize: 18,
+                    fontSize: ScreenUtil().setSp(18),
                     color: Color(0xFF222222)),
               ),
             ),
