@@ -21,7 +21,7 @@ class _CartProductCardState extends State<CartProductCard> {
 
   onRemove() {
     setState(() {
-      widget.product.quantity--;
+      if (widget.product.quantity > 0) widget.product.quantity--;
     });
   }
 

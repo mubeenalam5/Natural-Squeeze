@@ -15,6 +15,7 @@ class ProductDetailScr extends StatefulWidget {
 }
 
 class _ProductDetailScrState extends State<ProductDetailScr> {
+  int shugar = 1, ginger = 1;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -114,39 +115,41 @@ class _ProductDetailScrState extends State<ProductDetailScr> {
                                 ))
                           ]),
                     ),
-                    Container(
-                      height: ScreenUtil().setHeight(42.0),
-                      width: ScreenUtil().setWidth(122.0),
-                      decoration: BoxDecoration(
-                          color: Theme.of(context).primaryColor,
-                          shape: BoxShape.rectangle,
-                          borderRadius: BorderRadius.circular(30.0)),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          IconButton(
-                            onPressed: () {},
-                            icon: Icon(
-                              Icons.remove,
-                              color: Colors.white,
-                              size: 16.0,
-                            ),
-                          ),
-                          Text(widget.product.quantity.toString(),
-                              style: GoogleFonts.lato(
-                                letterSpacing: -0.25,
-                                fontSize: ScreenUtil().setSp(14.0),
+                    StatefulBuilder(
+                      builder: (_, state) => Container(
+                        height: ScreenUtil().setHeight(42.0),
+                        width: ScreenUtil().setWidth(122.0),
+                        decoration: BoxDecoration(
+                            color: Theme.of(context).primaryColor,
+                            shape: BoxShape.rectangle,
+                            borderRadius: BorderRadius.circular(30.0)),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            IconButton(
+                              onPressed: () => state(() => { if (widget.product.quantity>0) widget.product.quantity--}),
+                              icon: Icon(
+                                Icons.remove,
                                 color: Colors.white,
-                              )),
-                          IconButton(
-                            onPressed: () {},
-                            icon: Icon(
-                              Icons.add,
-                              color: Colors.white,
-                              size: 16.0,
+                                size: 16.0,
+                              ),
                             ),
-                          )
-                        ],
+                            Text(widget.product.quantity.toString(),
+                                style: GoogleFonts.lato(
+                                  letterSpacing: -0.25,
+                                  fontSize: ScreenUtil().setSp(14.0),
+                                  color: Colors.white,
+                                )),
+                            IconButton(
+                              onPressed: () => state(() => {widget.product.quantity++}),
+                              icon: Icon(
+                                Icons.add,
+                                color: Colors.white,
+                                size: 16.0,
+                              ),
+                            )
+                          ],
+                        ),
                       ),
                     )
                   ],
@@ -199,11 +202,11 @@ class _ProductDetailScrState extends State<ProductDetailScr> {
                     Center(
                       child: Column(
                         children: [
-                          addOnsCard('Shugar', 0.40),
+                          addOnsCard('Shugar', 0.40, shugar),
                           SizedBox(
                             height: ScreenUtil().setHeight(16.0),
                           ),
-                          addOnsCard('Extra ginger', 0.20)
+                          addOnsCard('Extra ginger', 0.20, ginger)
                         ],
                       ),
                     ),
@@ -233,7 +236,9 @@ class _ProductDetailScrState extends State<ProductDetailScr> {
                             height: ScreenUtil().setHeight(54.0),
                             width: ScreenUtil().setWidth(143.0),
                             decoration: BoxDecoration(
-                                color: isAlmond ? Colors.white : Theme.of(context).primaryColor,
+                                color: isAlmond
+                                    ? Colors.white
+                                    : Theme.of(context).primaryColor,
                                 shape: BoxShape.rectangle,
                                 boxShadow: [
                                   BoxShadow(
@@ -245,7 +250,9 @@ class _ProductDetailScrState extends State<ProductDetailScr> {
                             child: Center(
                               child: Text('Whole Milk',
                                   style: GoogleFonts.lato(
-                                    color: isAlmond ? Color(0xFF242424) : Colors.white,
+                                    color: isAlmond
+                                        ? Color(0xFF242424)
+                                        : Colors.white,
                                     fontSize: ScreenUtil().setSp(18.0),
                                   )),
                             ),
@@ -259,7 +266,9 @@ class _ProductDetailScrState extends State<ProductDetailScr> {
                             height: ScreenUtil().setHeight(54.0),
                             width: ScreenUtil().setWidth(138.0),
                             decoration: BoxDecoration(
-                                color: isAlmond ? Theme.of(context).primaryColor : Colors.white,
+                                color: isAlmond
+                                    ? Theme.of(context).primaryColor
+                                    : Colors.white,
                                 shape: BoxShape.rectangle,
                                 boxShadow: [
                                   BoxShadow(
@@ -271,7 +280,9 @@ class _ProductDetailScrState extends State<ProductDetailScr> {
                             child: Center(
                               child: Text('Almond',
                                   style: GoogleFonts.lato(
-                                    color: isAlmond ? Colors.white : Color(0xFF242424),
+                                    color: isAlmond
+                                        ? Colors.white
+                                        : Color(0xFF242424),
                                     fontSize: ScreenUtil().setSp(18.0),
                                   )),
                             ),
@@ -303,90 +314,92 @@ class _ProductDetailScrState extends State<ProductDetailScr> {
 
   bool isAlmond = true;
 
-  addOnsCard(String name, double price) {
-    return Container(
-      height: ScreenUtil().setHeight(68.0),
-      width: ScreenUtil().setWidth(313.0),
-      decoration: BoxDecoration(
-          color: Colors.white,
-          shape: BoxShape.rectangle,
-          borderRadius: BorderRadius.circular(60.0),
-          boxShadow: [
-            BoxShadow(
-                color: Colors.grey.shade50,
-                spreadRadius: ScreenUtil().setWidth(6.0),
-                blurRadius: ScreenUtil().setWidth(6.0))
-          ]),
-      child: ListTile(
-        contentPadding: EdgeInsets.only(
-            left: ScreenUtil().setWidth(35.0),
-            right: ScreenUtil().setWidth(25.0)),
-        title: Text(
-          name,
-          textAlign: TextAlign.left,
-          style: GoogleFonts.lato(
-              letterSpacing: -0.45,
-              fontSize: ScreenUtil().setSp(16.0),
-              color: Color(0xFF242424)),
-        ),
-        subtitle: Text(
-          '\$ ' + price.toString(),
-          textAlign: TextAlign.left,
-          style: GoogleFonts.lato(
-              letterSpacing: -0.45,
-              fontSize: ScreenUtil().setSp(13.0),
-              color: Color(0xFFA5A5A5)),
-        ),
-        trailing: Container(
-          width: ScreenUtil().setWidth(87.0),
-          height: ScreenUtil().setHeight(27.0),
-          child: Row(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              GestureDetector(
-                onTap: () {},
-                child: Container(
-                  width: ScreenUtil().setWidth(27.0),
-                  height: ScreenUtil().setHeight(27.0),
-                  decoration: BoxDecoration(
-                      color: Theme.of(context).primaryColor,
-                      shape: BoxShape.circle),
-                  child: Center(
-                    child: Icon(
-                      Icons.remove,
-                      size: ScreenUtil().setSp(14.0),
-                      color: Colors.white,
+  addOnsCard(String name, double price, int quantity) {
+    return StatefulBuilder(
+      builder: (_, state) => Container(
+        height: ScreenUtil().setHeight(68.0),
+        width: ScreenUtil().setWidth(313.0),
+        decoration: BoxDecoration(
+            color: Colors.white,
+            shape: BoxShape.rectangle,
+            borderRadius: BorderRadius.circular(60.0),
+            boxShadow: [
+              BoxShadow(
+                  color: Colors.grey.shade50,
+                  spreadRadius: ScreenUtil().setWidth(6.0),
+                  blurRadius: ScreenUtil().setWidth(6.0))
+            ]),
+        child: ListTile(
+          contentPadding: EdgeInsets.only(
+              left: ScreenUtil().setWidth(35.0),
+              right: ScreenUtil().setWidth(25.0)),
+          title: Text(
+            name,
+            textAlign: TextAlign.left,
+            style: GoogleFonts.lato(
+                letterSpacing: -0.45,
+                fontSize: ScreenUtil().setSp(16.0),
+                color: Color(0xFF242424)),
+          ),
+          subtitle: Text(
+            '\$ ' + price.toString(),
+            textAlign: TextAlign.left,
+            style: GoogleFonts.lato(
+                letterSpacing: -0.45,
+                fontSize: ScreenUtil().setSp(13.0),
+                color: Color(0xFFA5A5A5)),
+          ),
+          trailing: Container(
+            width: ScreenUtil().setWidth(87.0),
+            height: ScreenUtil().setHeight(27.0),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                GestureDetector(
+                  onTap: () => state(() => {if (quantity > 0) quantity--}),
+                  child: Container(
+                    width: ScreenUtil().setWidth(27.0),
+                    height: ScreenUtil().setHeight(27.0),
+                    decoration: BoxDecoration(
+                        color: Theme.of(context).primaryColor,
+                        shape: BoxShape.circle),
+                    child: Center(
+                      child: Icon(
+                        Icons.remove,
+                        size: ScreenUtil().setSp(14.0),
+                        color: Colors.white,
+                      ),
                     ),
                   ),
                 ),
-              ),
-              Text(
-                widget.product.quantity.toString(),
-                style: GoogleFonts.lato(
-                  letterSpacing: -0.25,
-                  fontSize: ScreenUtil().setSp(12.0),
-                  color: Color(0xFF242424),
-                ),
-              ),
-              GestureDetector(
-                onTap: () {},
-                child: Container(
-                  width: ScreenUtil().setWidth(27.0),
-                  height: ScreenUtil().setHeight(27.0),
-                  decoration: BoxDecoration(
-                      color: Theme.of(context).primaryColor,
-                      shape: BoxShape.circle),
-                  child: Center(
-                    child: Icon(
-                      Icons.add,
-                      size: ScreenUtil().setSp(14.0),
-                      color: Colors.white,
-                    ),
+                Text(
+                  quantity.toString(),
+                  style: GoogleFonts.lato(
+                    letterSpacing: -0.25,
+                    fontSize: ScreenUtil().setSp(12.0),
+                    color: Color(0xFF242424),
                   ),
                 ),
-              )
-            ],
+                GestureDetector(
+                  onTap: () => state(() => {quantity++}),
+                  child: Container(
+                    width: ScreenUtil().setWidth(27.0),
+                    height: ScreenUtil().setHeight(27.0),
+                    decoration: BoxDecoration(
+                        color: Theme.of(context).primaryColor,
+                        shape: BoxShape.circle),
+                    child: Center(
+                      child: Icon(
+                        Icons.add,
+                        size: ScreenUtil().setSp(14.0),
+                        color: Colors.white,
+                      ),
+                    ),
+                  ),
+                )
+              ],
+            ),
           ),
         ),
       ),

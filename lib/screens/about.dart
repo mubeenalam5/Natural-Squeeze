@@ -152,6 +152,6 @@ class _AboutScrState extends State<AboutScr> {
           ),
         ),
       ),
-    );;
+    );
   }
 }

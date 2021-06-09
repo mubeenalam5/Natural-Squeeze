@@ -2,7 +2,6 @@ import 'package:clippy_flutter/arc.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:natrualsqueeze/screens/home.dart';
 import 'package:natrualsqueeze/screens/landingpage.dart';
 import 'package:natrualsqueeze/screens/login.dart';
 import 'package:natrualsqueeze/widgets/textbutton.dart';

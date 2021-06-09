@@ -12,7 +12,6 @@ import '../widgets/textbutton.dart';
 import '../widgets/productcard.dart';
 import '../models/product.dart';
 import 'about.dart';
-import 'categories.dart';
 
 class HomeScr extends StatefulWidget {
   @override
