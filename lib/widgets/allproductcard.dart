@@ -26,7 +26,7 @@ class _AllProductCardState extends State<AllProductCard> {
           shape: BoxShape.rectangle,
           boxShadow: [
             BoxShadow(
-                color: Colors.grey.shade100.withOpacity(0.6),
+                color: Colors.grey.shade50,
                 spreadRadius: 6.0,
                 blurRadius: 6.0)
           ],

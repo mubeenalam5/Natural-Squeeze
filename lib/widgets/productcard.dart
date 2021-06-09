@@ -25,9 +25,9 @@ class _ProductCardState extends State<ProductCard> {
           shape: BoxShape.rectangle,
           boxShadow: [
             BoxShadow(
-                color: Colors.grey.shade100.withOpacity(0.6),
-                spreadRadius: 6.0,
-                blurRadius: 6.0)
+                color: Colors.grey.shade50,
+                spreadRadius: 7.0,
+                blurRadius: 7.0)
           ],
           borderRadius: BorderRadius.circular(35.0)),
       child: Column(

@@ -4,6 +4,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:natrualsqueeze/widgets/textbutton.dart';
 import 'package:natrualsqueeze/widgets/textfield.dart';
+import 'package:persistent_bottom_nav_bar/persistent-tab-view.dart';
+
+import 'categories.dart';
 
 class ProfileScr extends StatefulWidget {
   @override
@@ -131,7 +134,7 @@ class _ProfileScrState extends State<ProfileScr> {
                 width: 239.0,
                 text: 'Save',
                 textSize: 16.0,
-                onPressed: () {},
+                onPressed: () => pushNewScreen(context, screen: CategoriesScr()),
               ),
             ),
             SizedBox(
